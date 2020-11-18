@@ -1,16 +1,16 @@
 "use trict";
 
-const findBestEmployee = function(employees) {
-    const values = Object.values(employees);
-    let maxValueIndex;
-    let maxValue = 0;
-    for (const value of values) {
-        if (value > maxValue) {
-            maxValue = value;
-            maxValueIndex = values.indexOf(value);
-        }
+const findBestEmployee = function (employees) {
+  const values = Object.values(employees);
+  let maxValue = 0;
+  let bestEmployee;
+  for (const key in employees) {
+    if (employees[key] > maxValue) {
+      maxValue = employees[key];
+      bestEmployee = key;
     }
-    return Object.keys(employees)[maxValueIndex];
+  }
+  return bestEmployee;
 };
 
 /*
